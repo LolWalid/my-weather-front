@@ -11,3 +11,57 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html, body, #root {
+  height: 100%;
+}
+
+.center {
+  padding-top: 10%;
+}
+
+.error {
+  background-color: #EBA589;
+  border-radius: 4px;
+  padding: 5px 5px;
+}
+
+.area {
+  width: 50%;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #87CEEB;
+  border-radius: 4px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.btn-submit {
+  background-color: #fff;
+}
+
+.form-control {
+  margin: 10px auto;
+  width: 100%;
+  height: 34px;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
