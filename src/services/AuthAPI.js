@@ -11,6 +11,8 @@ function connect(user) {
           'jwt_token',
           response.headers.authorization
         );
+
+        setFavoriteCity(response)
         resolve();
       })
       .catch(error => {
@@ -40,12 +42,13 @@ function isLoggedIn() {
   return localStorage.getItem('jwt_token');
 }
 
-function disconnectUser() {
+function logout() {
   return new Promise((resolve, reject) => {
     axiosClient
       .delete('/sign_out')
       .then(() => {
         localStorage.removeItem('jwt_token');
+        localStorage.removeItem('favorite_city');
 
         resolve();
       })
@@ -55,4 +58,13 @@ function disconnectUser() {
   });
 }
 
-export {connect, disconnectUser, isLoggedIn, signup};
+function setFavoriteCity(response) {
+  const city = response.data.favorite_city
+  if (city) {
+    localStorage.setItem('favorite_city', response.data.favorite_city);
+  } else {
+    localStorage.removeItem('favorite_city');
+  }
+}
+
+export {connect, logout, isLoggedIn, signup, setFavoriteCity};

@@ -47,7 +47,7 @@ class Login extends React.Component {
     return (
       <div className="center">
         <div className="area">
-          <form className="area" onSubmit={this.submitForm}>
+          <form onSubmit={this.submitForm}>
             { this.state.errors && <div className="error">{this.state.errors}</div> }
             <input
               name="email"

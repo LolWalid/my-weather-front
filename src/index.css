@@ -29,12 +29,11 @@ html, body, #root {
 .area {
   width: 50%;
   font-size: 20px;
-  padding: 20px;
+  padding: 50px;
   background-color: #87CEEB;
   border-radius: 4px;
   margin: auto;
   display: flex;
-  text-align: center;
   flex-direction: column;
 }
 
@@ -64,4 +63,39 @@ html, body, #root {
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 4px;
+}
+
+.header {
+  text-align: right;
+  padding: 10px 30px 10px 10px;
+  background-color: #87CEEB;
+}
+
+.container {
+  padding: 0 10px;
+}
+
+.link {
+  color: rgb(0, 0, 238);;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link.selected {
+  color: rgb(238, 0, 0);
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.weather {
+  width: 150px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-left: 5px;
+  text-align: center;
+  padding: 5px;
+
 }
