@@ -10,7 +10,6 @@ function fetch(city) {
         }
       })
       .then(response => {
-        console.log(response)
         resolve(response);
       })
       .catch(error => {

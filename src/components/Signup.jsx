@@ -8,6 +8,7 @@ class Signup extends React.Component {
     this.state = {
       email: '',
       password: '',
+      password_confirmation: '',
       errors: null
     };
 
@@ -28,8 +29,22 @@ class Signup extends React.Component {
     });
   }
 
+  validateForm() {
+    if (!this.state.email) {
+      this.setState({ errors: { Email: ["must be filled"] }})
+      return false;
+    } else if (this.state.password !== this.state.password_confirmation) {
+      this.setState({ errors: { password: ["does not match password confirmation"] }})
+      return false;
+    }
+    return true;
+  }
+
   submitForm(event) {
     event.preventDefault();
+    if (!this.validateForm()) {
+      return;
+    }
 
     AuthAPI.signup({
       email: this.state.email,
@@ -59,6 +74,13 @@ class Signup extends React.Component {
             <input
               name="password"
               placeholder="Password"
+              type="password"
+              className="form-control"
+              onChange={this.handleChange}
+            />
+            <input
+              name="password_confirmation"
+              placeholder="Password Confirmation"
               type="password"
               className="form-control"
               onChange={this.handleChange}
